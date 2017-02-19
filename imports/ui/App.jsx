@@ -53,7 +53,7 @@ export default class App extends Component{
 
   renderPlayers() {
       return this.getPlayers().map((player) => (
-        <TeamList key={player.id} player={player} />
+        <TeamList key={player._id} player={player} />
       ));
   }
 
