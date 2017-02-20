@@ -1,4 +1,6 @@
-, { Component } from 'react';
+import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
+import { Players } from '../api/players';
 
 export default class Example extends Component{
   submitPlayer(event) {
@@ -18,11 +20,15 @@ export default class Example extends Component{
       notes: this.refs.notes.value,
       createdAt: new Date(),
     });
+
+    console.log("Success player submitted!");
+
+    browserHistory.push('/')
   }
   render() {
     return (
       <div className="row">
-        <form className="col s12">
+        <form className="col s12" onSubmit={this.submitPlayer.bind(this)}>
           <h3>Add a new player</h3>
 
           <div className="row">
