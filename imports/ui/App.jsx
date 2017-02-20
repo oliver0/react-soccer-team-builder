@@ -35,12 +35,19 @@ export class App extends Component{
 
     //setting up the state
     this.state = { currentPlayer: tempPlayer};
+    this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this);
   }
 
   renderPlayers() {
     return this.props.players.map((player) => (
-      <TeamList key={player._id} player={player} />
+      <TeamList key={player._id} player={player} updateCurrentPlayer={this.updateCurrentPlayer} />
     ));
+  }
+
+  updateCurrentPlayer(player) {
+    this.setState({
+      currentPlayer: player,
+    });
   }
 
   render() {
