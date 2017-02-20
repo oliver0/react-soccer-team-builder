@@ -23,7 +23,7 @@ export default class App extends Component{
   }
 
   renderPlayers() {
-    return this.state.players.map((player) => (
+    return this.props.players.map((player) => (
       <TeamList key={player._id} player={player} />
     ));
   }
@@ -39,7 +39,7 @@ export default class App extends Component{
             <div className="row">
               <div className="col s12 m7"><Player /></div>
               <div className="col s12 m5">
-                <h2>Team List</h2>
+                <h2>Team List</h2><Link to="/new" className="waves-light waves-effect btn">Add players</Link>
                 <Divider />
                 <List>
                   {this.renderPlayers()}
@@ -58,3 +58,10 @@ export default class App extends Component{
   App.propTypes = {
     players: PropTypes.array.isRequired,
   }
+
+  export default createContainer(() => {
+    Meteor.subscribe('players');
+    return {
+      players: Players.find({}, {sort: {name: 1}}).fetch(),
+    };
+  }, App);
