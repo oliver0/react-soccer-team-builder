@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
@@ -53,4 +53,8 @@ export default class App extends Component{
         </MuiThemeProvider>
       )
     }
+  }
+
+  App.propTypes = {
+    players: PropTypes.array.isRequired,
   }
