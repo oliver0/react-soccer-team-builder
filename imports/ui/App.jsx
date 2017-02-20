@@ -62,7 +62,7 @@ export class App extends Component{
             </AppBar>
 
             <div className="row">
-              <div className="col s12 m7"><Player /></div>
+              <div className="col s12 m7"><Player player={this.state.currentPlayer}/></div>
               <div className="col s12 m5">
                 <h2>Team List</h2><Link to="/new" className="waves-light waves-effect btn">Add players</Link>
                 <Divider />
