@@ -18,14 +18,14 @@ import AccountsWrapper from './AccountsWrapper';
 const tempPlayer = {
   name: "Temp player",
   team: "Temp",
-  dribbling: 3,
-  shooting: 2,
+  dribbling: 2,
+  shooting: 3,
   passing: 2,
   tackling: 1,
   speed: 2,
-  blocking: 2,
-  strategy: 0,
-  playmaking: 1,
+  blocking: 0,
+  strategy: 1,
+  playmaking: 2,
   notes: "This player is only temporary",
 }
 
