@@ -20,16 +20,16 @@ export default class Example extends Component{
       notes: this.refs.notes.value,
       createdAt: new Date(),
       owner: Meteor.userId(),
-    });
+    })
 
-    Meteor.call('insertPlayer', player, (error) => (
+    Meteor.call('insertPlayer', player, (error) => {
       if(error) {
-        alert("Oops something went wrong: " error.reason)
+        alert("Oops something went wrong: ", error.reason);
       } else {
         alert("Player added");
-        browserHistory.push('/')
+        browserHistory.push('/');
       }
-    ));
+    });
   }
   render() {
     return (
