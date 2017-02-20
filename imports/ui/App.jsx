@@ -4,6 +4,11 @@ import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
 import { List } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
+import { createContainer } from 'meteor/react-meteor-data';
+import { Link } from 'react-router';
+
+//database collection
+import { Players } from '../api/players'
 
 import TeamList from './Team-list';
 import TeamStats from './Team-stats';
