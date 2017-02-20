@@ -10,8 +10,15 @@ import TeamStats from './Team-stats';
 import Player from './Player';
 
 export default class App extends Component{
-  getPlayers() {
-    return [
+  constructor(props) {
+    super(props);
+
+    //setting up the state
+    this.state = { players: [] };
+  }
+
+  componentWillMount() {
+    this.setState({ players: [
       {
         _id: 1,
         name: "Oliver Alexander",
@@ -48,13 +55,14 @@ export default class App extends Component{
         strategy: 2,
         playmaking: 2
       },
-    ]
+    ]});
   }
 
+
   renderPlayers() {
-      return this.getPlayers().map((player) => (
-        <TeamList key={player._id} player={player} />
-      ));
+    return this.state.players.map((player) => (
+      <TeamList key={player._id} player={player} />
+    ));
   }
 
   render() {
@@ -65,20 +73,21 @@ export default class App extends Component{
             title="Soccer Application"
             iconClassNameRight="muidocs-icon-navigation-expand-more"
             showMenuIconButton={false}/>
-          <div className="row">
-            <div className="col s12 m7"><Player /></div>
-            <div className="col s12 m5">
-              <Divider />
+            <div className="row">
+              <div className="col s12 m7"><Player /></div>
+              <div className="col s12 m5">
+                <h2>Team List</h2>
+                <Divider />
                 <List>
                   {this.renderPlayers()}
                 </List>
-              <Divider />
+                <Divider />
+              </div>
+              <div className="col s12 m5"><TeamStats /></div>
             </div>
-            <div className="col s12 m5"><TeamStats /></div>
           </div>
-        </div>
 
-      </MuiThemeProvider>
-    )
+        </MuiThemeProvider>
+      )
+    }
   }
-}
