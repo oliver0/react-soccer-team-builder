@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 import { Mongo } from 'meteor/mongo';
 
 export const Players = new Mongo.Collection('players');
@@ -14,6 +16,7 @@ const PlayerSchema = new SimpleSchema({
   strategy: { type: Number, defaultValue: 0},
   playmaking: { type: Number, defaultValue: 0},
   notes: { type: String, optional: true},
+  owner: { type: String },
 
 });
 

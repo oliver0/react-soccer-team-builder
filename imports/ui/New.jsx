@@ -19,6 +19,7 @@ export default class Example extends Component{
       playmaking:this.refs.playmaking.value ,
       notes: this.refs.notes.value,
       createdAt: new Date(),
+      owner: Meteor.userId(),
     });
 
     console.log("Success player submitted!");
