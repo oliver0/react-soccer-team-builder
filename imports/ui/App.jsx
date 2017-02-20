@@ -22,48 +22,6 @@ export default class App extends Component{
     this.state = { players: [] };
   }
 
-  componentWillMount() {
-    this.setState({ players: [
-      {
-        _id: 1,
-        name: "Oliver Alexander",
-        dribbling: 2,
-        shooting: 3,
-        passing: 1,
-        tackling: 1,
-        speed: 3,
-        blocking: 2,
-        strategy: 3,
-        playmaking: 2
-      },
-      {
-        _id: 2,
-        name: "Lisa Tarbuck",
-        dribbling: 1,
-        shooting: 3,
-        passing: 2,
-        tackling: 3,
-        speed: 1,
-        blocking: 1,
-        strategy: 3,
-        playmaking: 2
-      },
-      {
-        _id: 3,
-        name: "Johnathon Ross",
-        dribbling: 1,
-        shooting: 3,
-        passing: 3,
-        tackling: 1,
-        speed: 2,
-        blocking: 2,
-        strategy: 2,
-        playmaking: 2
-      },
-    ]});
-  }
-
-
   renderPlayers() {
     return this.state.players.map((player) => (
       <TeamList key={player._id} player={player} />
