@@ -15,6 +15,6 @@ const PlayerSchema = new SimpleSchema({
   playmaking: { type: Number, defaultValue: 0},
   notes: { type: String, optional: true},
 
-})
+});
 
 Players.attachSchema(PlayerSchema);

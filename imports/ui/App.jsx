@@ -14,7 +14,7 @@ import TeamList from './Team-list';
 import TeamStats from './Team-stats';
 import Player from './Player';
 
-export default class App extends Component{
+export class App extends Component{
   constructor(props) {
     super(props);
 
@@ -57,7 +57,7 @@ export default class App extends Component{
 
   App.propTypes = {
     players: PropTypes.array.isRequired,
-  }
+  };
 
   export default createContainer(() => {
     Meteor.subscribe('players');
