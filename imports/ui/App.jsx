@@ -15,12 +15,26 @@ import TeamStats from './Team-stats';
 import Player from './Player';
 import AccountsWrapper from './AccountsWrapper';
 
+const tempPlayer = {
+  name: "Temp player",
+  team: "Temp",
+  dribbling: 3,
+  shooting: 2,
+  passing: 2,
+  tackling: 1,
+  speed: 2,
+  blocking: 2,
+  strategy: 0,
+  playmaking: 1,
+  notes: "This player is only temporary",
+}
+
 export class App extends Component{
   constructor(props) {
     super(props);
 
     //setting up the state
-    this.state = { players: [] };
+    this.state = { currentPlayer: tempPlayer};
   }
 
   renderPlayers() {
