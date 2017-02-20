@@ -11,5 +11,11 @@ import Lost from '../imports/ui/Lost'
 injectTapEventPlugin();
 
 Meteor.startup(() => {
-  render(<App />, document.getElementById('render-target'));
+  render((
+    <Router history={browserHistory}>
+      <Route path="/" component={App} />
+      <Route path="/example" component={Example}/>
+      <Route path="*" component={Lost}/>
+    </Router>
+  ), document.getElementById('render-target'));
 });
