@@ -74,7 +74,7 @@ export class App extends Component {
       return (<Edit currentPlayer={this.state.currentPlayer}
         showTeamStats={this.showTeamStats}/>);
       } else {
-        return (<TeamStats />);
+        return (<TeamStats players={this.props.players}/>);
       }
     }
 
