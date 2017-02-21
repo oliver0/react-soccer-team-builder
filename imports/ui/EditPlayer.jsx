@@ -39,7 +39,7 @@ export default class Edit extends Component{
 
     return (
       <div className="row">
-        <form className="col s12" onSubmit={this.submitPlayer.bind(this)}>
+        <form className="col s12" onSubmit={this.editPlayer.bind(this)}>
           <h3>Add a new player</h3>
 
           <div className="row">
@@ -126,7 +126,7 @@ export default class Edit extends Component{
             </div>
             <div className="input-field col s6">
               <h5>Playmaking</h5>
-              <select className="browser-default" ref="playmaking" defaultValue={currentPlayer.playmaking}>
+              <select className="browser-default" ref="playmaking" defaultValue={currentPlayer.name}>
                 <option value="0">0 - Hasn't demonstrated skills</option>
                 <option value="1">1 - Needs improvemnet</option>
                 <option value="2">2 - Skill acquired</option>
@@ -137,7 +137,7 @@ export default class Edit extends Component{
 
           <div className="row">
             <div className="input-field col s6">
-              <textarea placeholder="Notes" ref="notes" className="materialize-textarea" defaultValue={currentPlayer.notes}/>
+              <textarea placeholder="Notes" ref="notes" className="materialize-textarea"/>
             </div>
             <div className="input-field col s6">
               <button className="btn waves-effect waves-light" type="submit" name="action">submit
