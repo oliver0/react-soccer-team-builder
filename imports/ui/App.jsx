@@ -34,7 +34,10 @@ export class App extends Component{
     super(props);
 
     //setting up the state
-    this.state = { currentPlayer: tempPlayer};
+    this.state = {
+      currentPlayer: tempPlayer,
+      showEditPLayer: false,
+    };
     this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this);
   }
 
@@ -49,6 +52,27 @@ export class App extends Component{
       currentPlayer: player,
     });
   }
+
+  showEditForm() {
+    this.setState({
+      showEditPLayer: true,
+    });
+  }
+
+  showTeamStats() {
+    this.setState({
+      showEditPlayer: false,
+    })
+  }
+
+  showForm(){
+    if(this.state.showEditPlayer === true) {
+      return ( <Edit currentPlayer={this.state.currentPlayer}
+      showTeamStats={this.showTeamStats}/>);
+    } else {
+      return ( <TeamStats />);
+  }
+}
 
   render() {
     return (
@@ -71,7 +95,7 @@ export class App extends Component{
                 </List>
                 <Divider />
               </div>
-              <div className="col s12 m5"><TeamStats /></div>
+              <div className="col s12 m5">{this.showForm}</div>
             </div>
           </div>
 
