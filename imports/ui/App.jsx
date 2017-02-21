@@ -39,6 +39,8 @@ export class App extends Component{
       showEditPLayer: false,
     };
     this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this);
+    this.showEditForm = this.showEditForm.bind(this);
+    this.showTeamStats = this.showTeamStats.bind(this);
   }
 
   renderPlayers() {
@@ -68,25 +70,25 @@ export class App extends Component{
   showForm(){
     if(this.state.showEditPlayer === true) {
       return ( <Edit currentPlayer={this.state.currentPlayer}
-      showTeamStats={this.showTeamStats}/>);
-    } else {
-      return ( <TeamStats />);
-  }
-}
+        showTeamStats={this.showTeamStats}/>);
+      } else {
+        return ( <TeamStats />);
+      }
+    }
 
-  render() {
-    return (
-      <MuiThemeProvider>
-        <div className="container">
-          <AppBar
-            title="Soccer Application"
-            iconClassNameRight="muidocs-icon-navigation-expand-more"
-            showMenuIconButton={false}>
+    render() {
+      return (
+        <MuiThemeProvider>
+          <div className="container">
+            <AppBar
+              title="Soccer Application"
+              iconClassNameRight="muidocs-icon-navigation-expand-more"
+              showMenuIconButton={false}>
               <AccountsWrapper />
             </AppBar>
 
             <div className="row">
-              <div className="col s12 m7"><Player player={this.state.currentPlayer}/></div>
+              <div className="col s12 m7"><Player player={this.state.currentPlayer} showEditForm={this.showEditForm()}/></div>
               <div className="col s12 m5">
                 <h2>Team List</h2><Link to="/new" className="waves-light waves-effect btn">Add players</Link>
                 <Divider />

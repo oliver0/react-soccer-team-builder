@@ -20,11 +20,14 @@ const styles = {
 
 
 export default class Player extends Component{
+  showEditForm() {
+    this.props.showEditForm();
+  }
   render() {
     const player = this.props.player;
     const defence = player.tackling + player.speed + player.blocking + player.strategy + player.playmaking;
     const offence = player.shooting + player.strategy + player.dribbling + player.passing + player.speed + player.playmaking;
-    const total =  player.blocking + player.tackling + player.shooting + player.strategy + player.dribbling + player.passing + player.speed + player.playmaking; 
+    const total =  player.blocking + player.tackling + player.shooting + player.strategy + player.dribbling + player.passing + player.speed + player.playmaking;
 
     return (
       <Card>
@@ -110,6 +113,13 @@ export default class Player extends Component{
             </div>
           </CardText>
           <CardActions>
+            <RaisedButton
+              label="Edit player/stats"
+              labelPosition="before"
+              style={styles.button}
+              onClick={this.showEditForm.bind(this)}>
+
+            </RaisedButton>
           </CardActions>
         </Card>
       )
