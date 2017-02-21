@@ -38,7 +38,7 @@ export class App extends Component {
     this.state = {
       currentPlayer: tempPlayer,
       showEditPlayer: false,
-     };
+    };
     this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this);
     this.showEditForm = this.showEditForm.bind(this);
     this.showTeamStats = this.showTeamStats.bind(this);
@@ -72,57 +72,57 @@ export class App extends Component {
   showForm() {
     if(this.state.showEditPlayer === true) {
       return (<Edit currentPlayer={this.state.currentPlayer}
-      showTeamStats={this.showTeamStats}/>);
-    } else {
-      return (<TeamStats />);
+        showTeamStats={this.showTeamStats}/>);
+      } else {
+        return (<TeamStats />);
+      }
     }
-  }
 
-  render() {
-    return (
-      <MuiThemeProvider>
-        <div className="container">
-          <AppBar
-            title="Soccer Application"
-            iconClassNameRight="muidocs-icon-navigation-expand-more"
-            showMenuIconButton={false}>
+    render() {
+      return (
+        <MuiThemeProvider>
+          <div className="container">
+            <AppBar
+              title="Soccer Application"
+              iconClassNameRight="muidocs-icon-navigation-expand-more"
+              showMenuIconButton={false}>
               <AccountsWrapper />
             </AppBar>
-          <div className="row">
-            <div className="col s12 m7" ><Player player={this.state.currentPlayer} showEditForm={this.showEditForm}/></div>
-            <div className="col s12 m5" >
-              <h2>Team list</h2><Link to="/new" className="waves-effect waves-light btn">Add player</Link>
-              <Divider/>
+            <div className="row">
+              <div className="col s12 m7" ><Player player={this.state.currentPlayer} showEditForm={this.showEditForm}/></div>
+              <div className="col s12 m5" >
+                <h2>Team list</h2><Link to="/new" className="waves-effect waves-light btn">Add player</Link>
+                <Divider/>
                 <List>
                   {this.renderPlayers()}
                 </List>
-              <Divider/>
+                <Divider/>
+              </div>
+
             </div>
-            <div className="col s12 m5" >{this.showForm()}</div>
-          </div>
-          <div className="row">
-            <div className="col s12">
-              <br />
-              <Divider />
+            <div className="row">
+              <div className="col s12">
+                <br />
+                <Divider />
                 {this.showForm()}
-              <Divider />
+                <Divider />
+              </div>
             </div>
           </div>
-        </div>
-      </MuiThemeProvider>
-    )
+        </MuiThemeProvider>
+      )
+    }
   }
-}
 
-App.propTypes = {
-  players: PropTypes.array.isRequired,
-};
-
-export default createContainer(() => {
-  Meteor.subscribe('players');
-  const user = Meteor.userId();
-
-  return {
-    players: Players.find({ owner: user }, {sort: { name: 1}}).fetch(),
+  App.propTypes = {
+    players: PropTypes.array.isRequired,
   };
-}, App);
+
+  export default createContainer(() => {
+    Meteor.subscribe('players');
+    const user = Meteor.userId();
+
+    return {
+      players: Players.find({ owner: user }, {sort: { name: 1}}).fetch(),
+    };
+  }, App);
