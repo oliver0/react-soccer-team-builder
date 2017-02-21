@@ -10,6 +10,38 @@ export default class TeamStats extends Component{
     const players = this.props.players;
     const numPlayers = players.length;
 
+    const dribbling = Math.round((players.reduce((dribbling, player) => {
+      return dribbling + player.dribbling;
+    }, 0) / ( 3 * numPlayers )) * 100)
+
+    const shooting = Math.round((players.reduce((shooting, player) => {
+      return shooting + player.shooting;
+    }, 0) / ( 3 * numPlayers )) * 100)
+
+    const passing = Math.round((players.reduce((passing, player) => {
+      return passing + player.passing;
+    }, 0) / ( 3 * numPlayers )) * 100)
+
+    const tackling = Math.round((players.reduce((tackling, player) => {
+      return tackling + player.tackling;
+    }, 0) / ( 3 * numPlayers )) * 100)
+
+    const speed = Math.round((players.reduce((speed, player) => {
+      return speed + player.speed;
+    }, 0) / ( 3 * numPlayers )) * 100)
+
+    const blocking = Math.round((players.reduce((blocking, player) => {
+      return blocking + player.blocking;
+    }, 0) / ( 3 * numPlayers )) * 100)
+
+    const strategy = Math.round((players.reduce((strategy, player) => {
+      return strategy + player.strategy;
+    }, 0) / ( 3 * numPlayers )) * 100)
+
+    const playmaking = Math.round((players.reduce((playmaking, player) => {
+      return playmaking + player.playmaking;
+    }, 0) / ( 3 * numPlayers )) * 100)
+
 
     const data = {
       labels: ['Dribbling', 'Shooting', 'Passing','Tackling', 'Speed', 'blocking', 'Strategy', 'Playmaking'],
@@ -22,7 +54,7 @@ export default class TeamStats extends Component{
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgba(12,71,161,1)',
-          data: [65, 59, 90, 81, 56, 55, 40]
+          data: [dribbling, shooting, passing, tackling, speed, blocking, strategy, playmaking]
         }
       ]
     };
