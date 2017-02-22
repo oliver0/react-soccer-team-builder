@@ -42,6 +42,10 @@ export default class TeamStats extends Component{
       return playmaking + player.playmaking;
     }, 0) / ( 3 * numPlayers )) * 100)
 
+    const defense = Math.round((tackling + speed + blocking + strategy + playmaking)/5);
+    const offense = Math.round((shooting + strategy + dribbling + passing + speed + playmaking)/ 6);
+    const total = Math.round((blocking + tackling + shooting + strategy + dribbling + passing + speed + playmaking)/8);
+
 
     const data = {
       labels: ['Dribbling', 'Shooting', 'Passing','Tackling', 'Speed', 'blocking', 'Strategy', 'Playmaking'],
@@ -73,11 +77,11 @@ export default class TeamStats extends Component{
             <div className="col s12 m5">
               <h4>Scores in % of max possible</h4>
               <Divider />
-              <h4>Team's offence: 45%</h4>
-              <h4>Team's defence: 45%</h4>
-              <h4>Team's total: 45%</h4>
+              <h4>Team's offence: {offense}</h4>
+              <h4>Team's defence: {defense}</h4>
+              <h4>Team's total: {total}</h4>
               <Divider />
-              <h4>Number of players: 9</h4>
+              <h4>Number of players: {numPlayers}</h4>
             </div>
           </div>
         </div>
