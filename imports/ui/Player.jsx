@@ -3,7 +3,7 @@ import { Card, CardMedia, CardText, CardActions, CardTitle} from 'material-ui/Ca
 import RaisedButton from 'material-ui/RaisedButton';
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
-import { blue200, blue900 } from 'material-ui/styles/colors'
+import { blue200, lightBlue800, lightBlue50 } from 'material-ui/styles/colors'
 
 const styles = {
   chip: {
@@ -42,7 +42,7 @@ export default class Player extends Component{
                 backgroundColor={blue200}
                 style={styles.chip}
                 >
-                  <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                  <Avatar size={32} color={lightBlue50} backgroundColor={lightBlue800}>
                     {player.dribbling}
                   </Avatar>
                   Dribbling
@@ -51,7 +51,7 @@ export default class Player extends Component{
                 backgroundColor={blue200}
                 style={styles.chip}
                 >
-                  <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                  <Avatar size={32} color={lightBlue50} backgroundColor={lightBlue800}>
                     {player.shooting}
                   </Avatar>
                   Shooting
@@ -60,7 +60,7 @@ export default class Player extends Component{
                 backgroundColor={blue200}
                 style={styles.chip}
                 >
-                  <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                  <Avatar size={32} color={lightBlue50} backgroundColor={lightBlue800}>
                     {player.passing}
                   </Avatar>
                   Passing
@@ -69,7 +69,7 @@ export default class Player extends Component{
                 backgroundColor={blue200}
                 style={styles.chip}
                 >
-                  <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                  <Avatar size={32} color={lightBlue50} backgroundColor={lightBlue800}>
                     {player.tackling}
                   </Avatar>
                   Tackling
@@ -78,7 +78,7 @@ export default class Player extends Component{
                 backgroundColor={blue200}
                 style={styles.chip}
                 >
-                  <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                  <Avatar size={32} color={lightBlue50} backgroundColor={lightBlue800}>
                     {player.speed}
                   </Avatar>
                   Speed
@@ -87,7 +87,7 @@ export default class Player extends Component{
                 backgroundColor={blue200}
                 style={styles.chip}
                 >
-                  <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                  <Avatar size={32} color={lightBlue50} backgroundColor={lightBlue800}>
                     {player.blocking}
                   </Avatar>
                   Blocking
@@ -96,7 +96,7 @@ export default class Player extends Component{
                 backgroundColor={blue200}
                 style={styles.chip}
                 >
-                  <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                  <Avatar size={32} color={lightBlue50} backgroundColor={lightBlue800}>
                     {player.strategy}
                   </Avatar>
                   Strategy
@@ -105,7 +105,7 @@ export default class Player extends Component{
                 backgroundColor={blue200}
                 style={styles.chip}
                 >
-                  <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                  <Avatar size={32} color={lightBlue50} backgroundColor={lightBlue800}>
                     {player.playmaking}
                   </Avatar>
                   Playmaking
